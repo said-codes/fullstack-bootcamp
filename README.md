@@ -1,2 +1,2 @@
-# fullstack-midudev
-Full stack course
+# fullstack bootcamp
+Full stack bootcamp with midudev
