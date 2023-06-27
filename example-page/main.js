@@ -1,12 +1,28 @@
+console.log("Hello World")
+
+//data types
+//var isDeveloper = true //this is a bad practice and it's not recommended
 let firstname = 'Said'
-const lastname = 'Valencia Castrillo'
+let lastname = 'Valencia Castrillo'
 let isDeveloper = true
-let upperCaseName = firstname.toUpperCase()
+let age = 28
+let height = 1.75
+const PI = Math.PI
 
+// the string is immutable, the method returns a new string
+let firstname_uppercase = firstname.toUpperCase()
+console.log(firstname_uppercase)
+
+// lists
 const list = []
-//list.push(1)
-const newList = list.concat(1)
+//list.push(1) // this mutates the list
+const new_list = list.concat(1,2,3,4) // this does not mutate the list but returns a new list
+console.log(new_list)
 
+new_list.forEach((element , index)=> {
+    console.log(` value : ${element } in index : ${index}`)
+})
+// objects
 const person = {
     username : 'Said',
     twitter : '@said_codes',
@@ -17,17 +33,19 @@ const person = {
 
 console.log(person.username)
 console.log(person.links[0])
-
 const field = "twitter"
 console.log(person[field])
 
-const addition = (a,b) => {
-    console.log(a)
-    console.log(b)
+// functions
+
+// function expression
+const sum = (a,b) => {
     return a + b
 }
 
+// function declaration
 function subtraction(a, b){
     return a -b
 }
 
+console.log(sum(9,8))
