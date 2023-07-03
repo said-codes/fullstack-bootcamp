@@ -66,8 +66,8 @@ const person = {
     twitter: '@said_codes',
     age: 27,
     languages: {
-        backend : ["Java", "Python", "JavaScript"],
-        frontend : ["HTML", "CSS", "JavaScript"]
+        backend: ["Java", "Python", "JavaScript"],
+        frontend: ["HTML", "CSS", "JavaScript"]
     },
     isDeveloper: true,
     links: ['https://twitter.com/said_codes', 'https://github.com/said-codes']
@@ -86,12 +86,12 @@ const sum = (a, b) => {
     return a + b
 }
 
-let result = sum(8,9)
+let result = sum(8, 9)
 console.log(result)
 
 const square = n => n * n
 
-const list_of_numbers = [2,4,8,9, 14]
+const list_of_numbers = [2, 4, 8, 9, 14]
 
 const list_squared = list_of_numbers.map(number => number * number)
 
@@ -99,17 +99,83 @@ console.log(list_squared)
 
 
 // function declaration
-function product(a,b) {
+function product(a, b) {
     return a * b
 }
 
-let product_result = product( 90, 57)
+let product_result = product(90, 57)
 
 // function expression
-const average = function(a,b){
+const average = function (a, b) {
     return (a + b) / 2
 }
 
-let average_result = average(10,45)
+let average_result = average(10, 45)
 console.log(average_result)
+
+// Object methods and This
+const arto = {
+    name: 'Arto Hellas',
+    age: 35,
+    education: 'PhD',
+    greet: function () {
+        console.log('hello, my name is ' + this.name)
+    },
+    doAddition: function (a, b) {
+        console.log(a + b)
+    }
+}
+
+arto.growOlder = function () {
+    this.age += 1
+}
+
+console.log(arto.age)   // 35 is printed
+arto.growOlder()
+console.log(arto.age)   // 36 is printed
+arto.doAddition(9, 21) // 30 is printed
+const reference_to_addition = arto.doAddition
+reference_to_addition(40, 24) // 64 is printed
+arto.greet() // hello, my name is Arto Hellas
+const reference_to_greet = arto.greet
+reference_to_greet() // hello, my name is undefined
+
+setTimeout(arto.greet, 1000) // hello, my name is undefined
+setTimeout(arto.greet.bind(arto), 1000) // hello, my name is Arto Hellass
+
+// In the top level of the browser this == window
+// In the top level of the node REPL this == global
+// In the top level of a module in node this == module.exports
+
+// This is the arrow functions works  different
+// because the arrow functions doesn't have their own this
+// so the this is the same as the this of the parent function
+
+const myObject = {
+    myArrowFunction: null,
+    myMethod: function () {
+        this.myArrowFunction = () => { console.log(this) }
+    }
+}
+
+myObject.myMethod()
+myObject.myArrowFunction()
+
+// Classes
+class Person {
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
+
+    greet() {
+        console.log('hello, my name is ' + this.name)
+    }
+}
+
+const person1 = new Person('Arto Hellas', 27)
+const person2 = new Person('Said', 28)
+person1.greet()
+person2.greet()
+
 
