@@ -10,7 +10,6 @@ const Hello = ({ name, age }) => {
     </div>
   )
 }
-
 const App = () => {
   const name = 'Peter'
   const age = 10
