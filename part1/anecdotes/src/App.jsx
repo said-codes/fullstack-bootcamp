@@ -20,6 +20,7 @@ const App = () => {
   ]
 
   const [selected, setSelected] = useState(0)
+  const [votes, setVotes] = useState({})
 
   //handle aleatore anecdote function
   const handleNextAnecdote = () => {
@@ -27,10 +28,20 @@ const App = () => {
     setSelected(randomIndex)
   }
 
+  // handle votes function
+  const handleVotes = () => {
+    const updatedVotes = { ...votes }
+    updatedVotes[selected] = (updatedVotes[selected] || 0) + 1
+    setVotes(updatedVotes)
+    console.log(votes)
+    }
+
   return (
     <div>
       {anecdotes[selected]}
+      <p>has {votes[selected]} votes </p>
       <br/>
+      <Button text={"vote"} onClick={handleVotes}/>
       <Button text={"next anecdote"} onClick={handleNextAnecdote}/>
     </div>
   )
