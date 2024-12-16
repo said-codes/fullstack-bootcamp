@@ -21,7 +21,7 @@ const App = () => {
 
   const [selected, setSelected] = useState(0)
   const [votes, setVotes] = useState(new Array(anecdotes.length).fill(0))
-
+  //console.log(votes)
   // Handle next anecdote
   const handleNextAnecdote = () => {
     const randomIndex = Math.floor(Math.random() * anecdotes.length)
@@ -38,6 +38,8 @@ const App = () => {
   // Find the anecdote with the most votes
   const maxVotes = Math.max(...votes)
   const topAnecdote = anecdotes[votes.indexOf(maxVotes)]
+  //console.log(maxVotes)
+
 
   return (
     <div>

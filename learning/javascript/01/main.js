@@ -4,8 +4,8 @@
 // let is a local variable, it's mutable
 // const is a local variable, it's immutable
 
-//PI = 3.14 // this will throw an error because the constant PI is not mutable
 const PI = Math.PI
+//PI = 3.14 // this will throw an error because the constant PI is not mutable
 let firstname = 'Said'
 let lastname = 'Valencia Castrillo'
 let isDeveloper = true
