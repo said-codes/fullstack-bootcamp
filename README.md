@@ -1,6 +1,6 @@
-# Full Stack Open Project
+# Full Stack Open Bootcamp by fullstackopen.com and midudev
 
-![Full Stack Open](https://fullstackopen.com/assets/fullstack_open_logo-en.png)
+![Full Stack Open](https://fullstackopen.com/static/logo-4cf9df5cf7ee5cd6ac676f5a0c65c6d0.png)
 
 Este repositorio contiene los proyectos y ejercicios desarrollados como parte del curso [Full Stack Open](https://fullstackopen.com/), un curso que cubre tecnologías modernas de desarrollo web.
 
@@ -46,6 +46,7 @@ Este repositorio contiene los proyectos y ejercicios desarrollados como parte de
   - Redux
   - CSS/SCSS
   - Axios
+  - Vite
 
 - **Backend:**
   - Node.js
@@ -77,15 +78,39 @@ Antes de empezar, asegúrate de tener instalados:
 2. Instala las dependencias del cliente y del servidor:
 
    ```bash
-   cd name_project && npm install
+   cd frontend && npm install
+   cd ../backend && npm install
    ```
+
+3. Configura las variables de entorno:
+
+   - Crea un archivo `.env` en la carpeta `backend`:
+
+     ```env
+     MONGODB_URI=mongodb://localhost:27017/fullstackopen
+     PORT=3001
+     SECRET=your_secret_key
+     ```
+
+   - En `frontend`, configura la URL del servidor en un archivo `.env`:
+
+     ```env
+     VITE_BACKEND_URL=http://localhost:3001
+     ```
 
 ## Uso
 
 1. Inicia el servidor:
 
    ```bash
-   cd project_name
+   cd backend
+   npm start
+   ```
+
+2. Inicia la aplicación cliente:
+
+   ```bash
+   cd frontend
    npm run dev
    ```
 
@@ -106,4 +131,3 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para má
 ---
 
 ¡Gracias por visitar este repositorio y disfrutar del viaje por el mundo del desarrollo full stack!
-
