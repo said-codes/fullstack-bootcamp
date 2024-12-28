@@ -1,6 +1,6 @@
 # Full Stack Open Bootcamp by fullstackopen.com and midudev
 
-# {() => fs} Full Stack Open
+## {() => fs} Full Stack Open
 
 Este repositorio contiene los proyectos y ejercicios desarrollados como parte del curso [Full Stack Open](https://fullstackopen.com/), un curso que cubre tecnologías modernas de desarrollo web.
 
