@@ -29,7 +29,7 @@ const t = [1, -1, 3]
 t.push(5)
 // that it is constant means that the value cannot be reassigned not that it cannot be changed
 console.log(t.length) // 4 is printed
-console.log(t[0])     // -1 is printed
+console.log(t[0])     // 1 is printed
 
 
 // concat method
@@ -69,6 +69,12 @@ console.log(person[field])
 // Functions
 
 // function expression
+const greet2 = function() {
+    console.log("Hi there!");
+};
+greet2(); // Output: Hi there!
+
+// arrow function
 const sum = (a, b) => {
     return a + b
 }
@@ -76,7 +82,7 @@ const sum = (a, b) => {
 let result = sum(8, 9)
 console.log(result)
 
-// function declaration
+// declaration function
 function product(a, b) {
     return a * b
 }
