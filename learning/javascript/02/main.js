@@ -83,30 +83,36 @@ function printInfo( {name}){
 document.body.innerHTML = printInfo(user)
 
 
-// anonymous functions
 const button2 = document.createElement('button')
 button2.innerText = "Click me 2"
 const background = 'blue'
 const color = 'white'
 const result = `background: ${background}; color: ${color};`
 button2.style  =  `${result}`
+// anonymous functions
 button2.addEventListener('click', function(){
     alert("Clicked 2!")
 })
 
 document.body.append(button2)
 
-
-// arrow functions
+// declaration function
 function add(a, b){
     return a + b
 }
 
+// function expression
+const greet2 = function() {
+    console.log("Hi there!");
+};
+greet2(); // Output: Hi there!
+
+// arrow function
 const addArrow = (a, b) => {
     return a + b
 }
 
-// inline arrow functions
+// inline arrow function
 const addArrow2 = (a, b) => a + b
 
 const showObject = () => ({name: 'Said', age: 30})
